@@ -1,0 +1,13 @@
+{% extends 'finance/base.html' %}
+
+{% block title %}Add Transaction - SuperChip{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Add Transaction for {{ account.name }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Add Transaction</button>
+</form>
+<a href="{% url 'index' %}" class="btn btn-link mt-3">Back to Accounts</a>
+{% endblock %}

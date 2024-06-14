@@ -1,0 +1,13 @@
+{% extends 'finance/base.html' %}
+
+{% block title %}Delete Account - SuperChip{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Delete Account</h1>
+<p>Are you sure you want to delete the account "{{ account.name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
